@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="zh-CN"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Kmall</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <!--引入网页样式-->
+    <link href="/static/css/public.css" rel="stylesheet"/>
+    <link href="/static/css/cz.css" rel="stylesheet"/>
+    <!--引入iconfont-->
+    <link rel="stylesheet" href="/static/css/iconfont.css">
+    <!--引入swiper-->
+    <link rel="stylesheet" href="/static/css/swiper.min.css">
+    <script src="/static/js/swiper.min.js"></script>
+    <!--引入自己写的js-->
+    <script src="/static/js/index.js"></script>
+</head>
+<body>
+<!--网页开头-->
+    <div id="cz_page">
+        <!--顶部-->
+        <div class="cz_top">
+            <h1><a href="http://localhost:8082"><img src="/static/img/top/logo.png" alt=""></a></h1>
+            <div class="top_sign">
+
+                <p><i class="iconfont icon-denglu" onclick="javascript:window.location.href='http://localhost:8082/user/showLogin';return false;"></i></p>
+                <p><i class="iconfont icon-gouwuche" onclick="javascript:window.location.href='http://localhost:8085/cart/cart.html';return false;"></i></p>
+            </div>
+            <div class="top_list">
+               <!-- <ul>
+                    <li><a href="/static/">在线商城</a></li>
+                    <li><a href="/static/">坚果Pro 2S</a></li>
+                    <li><a href="/static/">坚果R1</a></li>
+                    <li><a href="/static/"> 坚果TNT工作站</a></li>
+                    <li><a href="/static/">Smartisan OS</a></li>
+                    <li><a href="/static/">欢喜云</a></li>
+                    <li><a href="/static/">论坛</a></li>
+                    <li><a href="/static/">荣誉与奖项</a></li>
+                    
+                </ul>-->
+            </div>
+
+
+        </div>
+        <div class="cz_head_nav">
+            <div class="h-list">
+               <ul>
+                    <li class="f-bold"><a class="c-black" href="/static/">Kmall</a></li>
+                    <!-- <li><a href="/static/">手机</a></li>
+                    <li><a href="/static/">"足迹"系列</a></li>
+                    <li><a href="/static/">官方配件</a></li>
+                    <li><a href="/static/">畅呼吸</a></li>
+                    <li><a href="/static/">品牌周边</a></li>
+                    <li><a href="/static/">只能音箱</a></li>
+                    <li><a href="/static/">服务</a></li>
+                    <li><a href="/static/">企业团购</a></li>-->
+                </ul>
+            </div>
+            <div class="h-sear" id="cz-search">
+
+                <input type="text" id="h-inp" >
+                <i class="iconfont icon-xiazai17" onclick="javascript:window.location.href='http://localhost:8082/search.html?q=' + encodeURIComponent(document.getElementById('h-inp').value);return false;"></i>
+                <p id="h-inp-txt">点击搜索</p>
+            </div>
+        </div>
+
+
+        <!--网页主体-->
+        <div class="cz_body">
+            <!--轮播图banner部分-->
+            <section class="cz_banner">
+                <div class="swiper-container main-swiper-container">
+                    <div class="swiper-wrapper">
+                        <!--//传递一个ad1的数组过来，我们需要取出来，把各个数据分布遍历在下面     -->
+                      <!--  <div th:each="ad:${ad1}">-->
+                           <!-- <p th:text="${ad}">1111</p>
+                            <p th:text="${ad.id}"></p>-->
+                           <!-- <a th:href="${ad.url}"></a>-->
+                           <div class="swiper-slide"><a th:href="${ad1[0].url}"><img th:src="${ad1[0].pic}" alt="${ad1[0].alt}"></a></div>
+                        <div class="swiper-slide"><a th:href="${ad1[1].url}"><img th:src="${ad1[1].pic}" alt="${ad1[1].alt}"></a></div>
+                        <div class="swiper-slide"><a th:href="${ad1[2].url}"><img th:src="${ad1[2].pic}" alt="${ad1[2].alt}"></a></div>
+                        <!--</div>-->
+                    </div>
+                    <!-- 如果需要分页器 -->
+                    <div class="swiper-pagination main-swiper-pagination"></div>
+                </div>
+            </section>
+            <!--introduce-->
+          <!--  <section class="cz_intro">
+                <div class="cz_phone">
+                    <ul>-->
+                        <!--<li><img src="/static/./img/phone/a.jpg" alt=""><a href="/static/baidu.com"></a></li>
+                        <li><img src="/static/./img/phone/b.jpg" alt=""><a href="/static/baidu.com"></a></li>
+                        <li><img src="/static/./img/phone/c.jpg" alt=""><a href="/static/baidu.com"></a></li>
+                        <li><img src="/static/./img/phone/d.jpg" alt=""><a href="/static/baidu.com"></a></li>-->
+           <!--         </ul>
+                </div>
+            </section>-->
+            <!--热门商品部分-->
+            <!--坚果及其配件-->
+            <section class="cz_parts b-r m-top-25">
+                <div class="phone-parts">
+                    <div class="g-top">
+                        <h2>坚果及其配件</h2>
+                    </div>
+                    <table>
+                        <tr>
+                            <td colspan="2">
+                                <div class="p-pic">
+                                    <img src="/static/img/phoneParts/a.jpg" alt="brand">
+                                    <a href="http://localhost:8082/item/157215506592283.html" class="a-shadow"></a>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="goodscon">
+                                    <div class="swiper-container hotGoods-swiper-container">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide"><a href="http://localhost:8082/item/157215577587237.html"><img src="/static/img/hotGoods/b.jpg" alt=""></a></div>
+                                            <div class="swiper-slide"><a href="http://localhost:8082/item/157215577587237.html"><img src="/static/img/hotGoods/d.jpg" alt=""></a></div>
+                                            <div class="swiper-slide"><a href="http://localhost:8082/item/157215577587237.html"><img src="/static/img/hotGoods/c.jpg" alt=""></a></div>
+                                            <div class="swiper-slide"><a href="http://localhost:8082/item/157215577587237.html"><img src="/static/img/hotGoods/d.jpg" alt=""></a></div>
+                                        </div>
+                                        <!--分页器 -->
+                                        <div class="swiper-pagination  hotGoods-swiper-pagination"></div>
+                                    </div>
+                                    <div class="goods-link">
+                                        <p><a href="http://localhost:8082/item/157215577587237.html">坚果Pro 2S</a></p>
+                                        <p><a href="http://localhost:8082/item/157215577587237.html">双系统  无限屏</a></p>
+                                    </div>
+                                    <p class="goods-price">￥<span>1998.00</span></p>
+                                    <div class="whole-link">
+                                        <a href="http://localhost:8082/item/157215577587237.html" class="check-detail">查看详情</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="goodscon">
+                                    <div class="swiper-container hotGoods-swiper-container">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide"><a href="http://localhost:8082/item/157215591644508.html"><img src="/static/img/hotGoods/c.jpg" alt=""></a></div>
+                                            <div class="swiper-slide"><a href="http://localhost:8082/item/157215591644508.html"><img src="/static/img/hotGoods/d.jpg" alt=""></a></div>
+                                            <div class="swiper-slide"><a href="http://localhost:8082/item/157215591644508.html"><img src="/static/img/hotGoods/c.jpg" alt=""></a></div>
+                                        </div>
+                                        <!--分页器 -->
+                                        <div class="swiper-pagination  hotGoods-swiper-pagination"></div>
+                                    </div>
+                                    <div class="goods-link">
+                                        <p><a href="http://localhost:8082/item/157215591644508.html">苹果8</a></p>
+                                        <p><a href="http://localhost:8082/item/157215591644508.html">高贵奢华</a></p>
+                                    </div>
+                                    <p class="goods-price">￥<span>1998.00</span></p>
+                                    <div class="whole-link">
+                                        <a href="http://localhost:8082/item/157215591644508.html" class="check-detail">查看详情</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="goodscon">
+                                    <div class="swiper-container hotGoods-swiper-container">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide"><a href="http://localhost:8082/item/157215630363674.html"><img src="/static/img//phoneParts/d.jpg" alt=""></a></div>
+                                        </div>
+                                        <!--分页器 -->
+                                        <div class="swiper-pagination  hotGoods-swiper-pagination"></div>
+                                    </div>
+                                    <div class="goods-link">
+                                        <p><a href="http://localhost:8082/item/157215630363674.html">Vivo8</a></p>
+                                        <p><a href="http://localhost:8082/item/157215630363674.html">超强通话能力、</a></p>
+                                    </div>
+                                    <p class="goods-price">￥<span>2998.00</span></p>
+                                    <div class="whole-link">
+                                        <a href="http://localhost:8082/item/157215630363674.html" class="check-detail">查看详情</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="goodscon">
+                                    <div class="swiper-container hotGoods-swiper-container">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide"><a href="/static/"><img src="/static/img//phoneParts/e.jpg" alt=""></a></div>
+                                        </div>
+                                        <!--分页器 -->
+                                        <div class="swiper-pagination  hotGoods-swiper-pagination"></div>
+                                    </div>
+                                    <div class="goods-link">
+                                        <p><a href="http://localhost:8082/item/157215638530128.html">华为P30</a></p>
+                                        <p><a href="http://localhost:8082/item/157215638530128.html">超清摄影</a></p>
+                                    </div>
+                                    <p class="goods-price">￥<span>2998.00</span></p>
+                                    <div class="whole-link">
+                                        <a href="http://localhost:8082/item/157215638530128.html" class="check-detail">查看详情</a>
+
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="goodscon">
+                                    <div class="swiper-container hotGoods-swiper-container">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide"><a href="http://localhost:8082/item/157215647980630.html"><img src="/static/img/phoneParts/f.jpg" alt=""></a></div>
+                                        </div>
+                                        <!--分页器 -->
+                                        <div class="swiper-pagination  hotGoods-swiper-pagination"></div>
+                                    </div>
+                                    <div class="goods-link">
+                                        <p><a href="http://localhost:8082/item/157215647980630.html">魅族</a></p>
+                                        <p><a href="http://localhost:8082/item/157215647980630.html">魅族高级黑</a></p>
+                                    </div>
+                                    <p class="goods-price">￥<span>2998.00</span></p>
+                                    <div class="whole-link">
+                                        <a href="http://localhost:8082/item/157215647980630.html" class="check-detail">查看详情</a>
+
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="goodscon">
+                                    <div class="swiper-container hotGoods-swiper-container">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide"><a href="/static/"><img src="/static/img//phoneParts/g.jpg" alt=""></a></div>
+                                        </div>
+                                        <!--分页器 -->
+                                        <div class="swiper-pagination  hotGoods-swiper-pagination"></div>
+                                    </div>
+                                    <div class="goods-link">
+                                        <p><a href="http://localhost:8082/item/157215657760091.html">HTC</a></p>
+                                        <p><a href="http://localhost:8082/item/157215657760091.html">老牌手机</a></p>
+                                    </div>
+                                    <p class="goods-price">￥<span>2998.00</span></p>
+                                    <div class="whole-link">
+                                        <a href="http://localhost:8082/item/157215657760091.html" class="check-detail">查看详情</a>
+
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+
+            <!--净化器及配件
+            <section class="cz_clean b-r m-top-25">
+                <div class="phone-parts">
+                    <div class="g-top">
+                        <h2>净化器及配件</h2>
+                    </div>
+                    <table>
+                        <tr>
+                            <td colspan="2">
+                                <div class="p-pic">
+                                    <img src="/static/img/cleanParts/a.jpg" alt="brand">
+                                    <a href="/static/" class="a-shadow"></a>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="goodscon">
+                                    <div class="swiper-container hotGoods-swiper-container">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide"><a href="/static/"><img src="/static/img/cleanParts/d.jpg" alt=""></a></div>
+                                        </div>-->
+                                        <!--分页器
+                                        <div class="swiper-pagination  hotGoods-swiper-pagination"></div>
+                                    </div>
+                                    <div class="goods-link">
+                                        <p><a href="/static/">坚果Pro 2S</a></p>
+                                        <p><a href="/static/">双系统  无限屏</a></p>
+                                    </div>
+                                    <p class="goods-price">￥<span>1998.00</span></p>
+                                    <div class="whole-link">
+                                        <a href="/static/" class="check-detail">查看详情</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="goodscon">
+                                    <div class="swiper-container hotGoods-swiper-container">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide"><a href="/static/"><img src="/static/img/cleanParts/c.jpg" alt=""></a></div>
+                                            <div class="swiper-slide"><a href="/static/"><img src="/static/img/cleanParts/d.jpg" alt=""></a></div>
+                                            <div class="swiper-slide"><a href="/static/"><img src="/static/img/cleanParts/c.jpg" alt=""></a></div>
+                                        </div> -->
+                                        <!--分页器 
+                                        <div class="swiper-pagination  hotGoods-swiper-pagination"></div>
+                                    </div>
+                                    <div class="goods-link">
+                                        <p><a href="/static/">坚果Pro 2S</a></p>
+                                        <p><a href="/static/">双系统  无限屏</a></p>
+                                    </div>
+                                    <p class="goods-price">￥<span>1998.00</span></p>
+                                    <div class="whole-link">
+                                        <a href="/static/" class="check-detail">查看详情</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="goodscon">
+                                    <div class="swiper-container hotGoods-swiper-container">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide"><a href="/static/"><img src="/static/img//cleanParts/d.jpg" alt=""></a></div>
+                                        </div>-->
+                                        <!--分页器 
+                                        <div class="swiper-pagination  hotGoods-swiper-pagination"></div>
+                                    </div>
+                                    <div class="goods-link">
+                                        <p><a href="/static/">畅呼吸智能空气净化器 · 标准版</a></p>
+                                        <p><a href="/static/">超强净化能力、超低噪音、超长寿命</a></p>
+                                    </div>
+                                    <p class="goods-price">￥<span>2998.00</span></p>
+                                    <div class="whole-link">
+                                        <a href="/static/#" class="check-detail">查看详情</a>
+                                        <a href="/static/#" class="sell-out">已售罄</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="goodscon">
+                                    <div class="swiper-container hotGoods-swiper-container">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide"><a href="/static/"><img src="/static/img//cleanParts/e.jpg" alt=""></a></div>
+                                        </div>-->
+                                        <!--分页器 
+                                        <div class="swiper-pagination  hotGoods-swiper-pagination"></div>
+                                    </div>
+                                    <div class="goods-link">
+                                        <p><a href="/static/">畅呼吸智能空气净化器 · 标准版</a></p>
+                                        <p><a href="/static/">超强净化能力、超低噪音、超长寿命</a></p>
+                                    </div>
+                                    <p class="goods-price">￥<span>2998.00</span></p>
+                                    <div class="whole-link">
+                                        <a href="/static/#" class="check-detail">查看详情</a>
+                                        <a href="/static/#" class="sell-out">已售罄</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="goodscon">
+                                    <div class="swiper-container hotGoods-swiper-container">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide"><a href="/static/"><img src="/static/img//cleanParts/f.jpg" alt=""></a></div>
+                                        </div>-->
+                                        <!--分页器
+                                        <div class="swiper-pagination  hotGoods-swiper-pagination"></div>
+                                    </div>
+                                    <div class="goods-link">
+                                        <p><a href="/static/">畅呼吸智能空气净化器 · 标准版</a></p>
+                                        <p><a href="/static/">超强净化能力、超低噪音、超长寿命</a></p>
+                                    </div>
+                                    <p class="goods-price">￥<span>2998.00</span></p>
+                                    <div class="whole-link">
+                                        <a href="/static/#" class="check-detail">查看详情</a>
+                                        <a href="/static/#" class="sell-out">已售罄</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="goodscon">
+                                    <div class="swiper-container hotGoods-swiper-container">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide"><a href="/static/"><img src="/static/img//cleanParts/g.jpg" alt=""></a></div>
+                                        </div> -->
+                                        <!--分页器
+                                        <div class="swiper-pagination  hotGoods-swiper-pagination"></div>
+                                    </div>
+                                    <div class="goods-link">
+                                        <p><a href="/static/">畅呼吸智能空气净化器 · 标准版</a></p>
+                                        <p><a href="/static/">超强净化能力、超低噪音、超长寿命</a></p>
+                                    </div>
+                                    <p class="goods-price">￥<span>2998.00</span></p>
+                                    <div class="whole-link">
+                                        <a href="/static/#" class="check-detail">查看详情</a>
+                                        <a href="/static/#" class="sell-out">已售罄</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </section> -->
+            <!--品牌周边-->
+            <!--品牌精选-->
+            <!--论坛精选
+            <section class="cz_forum_choice b-r m-top-25">
+                <div class="g-top">
+                    <h2>论坛精选</h2>
+                    <p>前往论坛 <span>></span></p>
+                </div>
+                <div class="form_intro">
+                    <ul>
+                        <li>
+                            <div><img src="/static/img/forumChoice/a.jpg" alt=""></div>
+                            <p>[开箱] 坚果 Pro 2S 内敛骚蓝惊艳炫光</p>
+                            <p>内敛骚蓝，惊艳炫光</p>
+                            <p>阅读全文 ></p>
+                            <a href="/static/" class="whole-link"></a>
+                        </li>
+                        <li>
+                            <div><img src="/static/img/forumChoice/b.jpg" alt=""></div>
+                            <p>[开箱] 坚果 Pro 2S</p>
+                            <p>全新的炫光蓝急炫光红色相当惊艳</p>
+                            <p>阅读全文 ></p>
+                            <a href="/static/" class="whole-link"></a>
+                        </li>
+                        <li>
+                            <div><img src="/static/img/forumChoice/c.jpg" alt=""></div>
+                            <p>[开箱] 纯白色坚果Pro2图赏</p>
+                            <p>优美如斯，冰清玉洁</p>
+                            <p>阅读全文 ></p>
+                            <a href="/static/" class="whole-link"></a>
+                        </li>
+                        <li>
+                            <div><img src="/static/img/forumChoice/d.jpg" alt=""></div>
+                            <p>[合辑] 八月优秀摄影作品</p>
+                            <p>8月的优秀作品如期而至</p>
+                            <p>阅读全文 ></p>
+                            <a href="/static/" class="whole-link"></a>
+                        </li>
+                    </ul>
+                </div>
+            </section>-->
+
+        <!--网页身体结束-->
+        </div>
+
+<!--网页结束-->
+    </div>
+<script>
+    //banner----swiper初始化
+    var mySwiper = new Swiper ('.main-swiper-container', {
+        autoplay:true,
+        speed:3000,
+        loop: true,
+        effect : 'fade',
+        fadeEffect: {
+            crossFade: true,
+        },
+        //分页器
+        pagination: {
+            el: '.main-swiper-pagination',
+            clickable:true,
+        },
+    });
+    //热门商品部分
+    var hotGoodsSwiper=new Swiper ('.hotGoods-swiper-container', {
+        autoplay:false,
+        effect : 'fade',
+        fadeEffect: {
+            crossFade: true,
+        },
+        //分页器
+        pagination: {
+            el: '.hotGoods-swiper-pagination',
+            clickable:true,
+        },
+    });
+
+
+
+
+
+    //搜索框效果
+    var oInp=document.getElementById("h-inp"),
+        oPTxt=document.getElementById("h-inp-txt"),
+        oSearCont=document.getElementById("cz-search");//搜索框部分
+    oInp.onfocus=function(){    //获得焦点
+        oPTxt.style.display="none";
+    }
+    oInp.onblur=function(){ //失去焦点
+        oPTxt.style.display="block";
+    }
+</script>
+</body>
+</html>

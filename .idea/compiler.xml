@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="cart" />
+        <module name="commons" />
+        <module name="consumer" />
+        <module name="demo" />
+        <module name="find" />
+        <module name="front-web" />
+        <module name="interface" />
+        <module name="item" />
+        <module name="item-detail" />
+        <module name="login" />
+        <module name="order" />
+        <module name="passport" />
+        <module name="portal" />
+        <module name="provider" />
+        <module name="redis-sql" />
+        <module name="search" />
+        <module name="test" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="1.8">
+      <module name="cart" target="1.8" />
+      <module name="commons" target="1.5" />
+      <module name="consumer" target="1.8" />
+      <module name="demo" target="1.8" />
+      <module name="find" target="1.8" />
+      <module name="front-web" target="1.8" />
+      <module name="interface" target="1.5" />
+      <module name="item" target="1.8" />
+      <module name="item-detail" target="1.8" />
+      <module name="Kmall" target="1.5" />
+      <module name="login" target="1.8" />
+      <module name="order" target="1.8" />
+      <module name="passport" target="1.8" />
+      <module name="portal" target="1.8" />
+      <module name="provider" target="1.8" />
+      <module name="redis" target="1.8" />
+      <module name="redis-sql" target="1.8" />
+      <module name="search" target="1.8" />
+      <module name="test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

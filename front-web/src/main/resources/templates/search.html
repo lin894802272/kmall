@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>锤子官网模板</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <!--导入bootStrap-->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <!--引入网页样式-->
+    <link href="/static/css/public.css" rel="stylesheet"/>
+    <link href="/static/css/cz.css" rel="stylesheet"/>
+    <!--引入iconfont-->
+    <link rel="stylesheet" href="/static/css/iconfont.css">
+    <!--引入swiper-->
+    <link rel="stylesheet" href="/static/css/swiper.min.css">
+    <script src="/static/js/swiper.min.js"></script>
+    <!--引入自己写的js-->
+    <script src="/static/js/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/css/base.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/static/css/psearch20131008.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/static/css/psearch.onebox.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/static/css/pop_compare.css" media="all" />
+<script type="text/javascript" src="/static/js/jquery-1.6.4.js"></script>
+<script type="text/javascript" src="/static/js/base-2011.js" charset="utf-8"></script>
+
+
+</head>
+<body>
+<!--网页开头-->
+    <div id="cz_page">
+        <!--顶部-->
+        <div class="cz_top">
+            <h1><a href="http://localhost:8082"><img src="/static/img/top/logo.png" alt=""></a></h1>
+            <div class="top_sign">
+
+                <p ><i class="iconfont icon-denglu" onclick="javascript:window.location.href='http://localhost:8082/user/showLogin';return false;"></i></p>
+                <p><i class="iconfont icon-gouwuche" onclick="javascript:window.location.href='http://localhost:8085/cart/cart.html';return false;"></i></p>
+            </div>
+            <div class="top_list">
+                <!-- <ul>
+                     <li><a href="/static/">在线商城</a></li>
+                     <li><a href="/static/">坚果Pro 2S</a></li>
+                     <li><a href="/static/">坚果R1</a></li>
+                     <li><a href="/static/"> 坚果TNT工作站</a></li>
+                     <li><a href="/static/">Smartisan OS</a></li>
+                     <li><a href="/static/">欢喜云</a></li>
+                     <li><a href="/static/">论坛</a></li>
+                     <li><a href="/static/">荣誉与奖项</a></li>
+
+                 </ul>-->
+            </div>
+
+
+        </div>
+        <div class="cz_head_nav">
+            <div class="h-list">
+                <ul>
+                    <li class="f-bold"><a class="c-black" href="/static/">Kmall</a></li>
+                    <!-- <li><a href="/static/">手机</a></li>
+                    <li><a href="/static/">"足迹"系列</a></li>
+                    <li><a href="/static/">官方配件</a></li>
+                    <li><a href="/static/">畅呼吸</a></li>
+                    <li><a href="/static/">品牌周边</a></li>
+                    <li><a href="/static/">只能音箱</a></li>
+                    <li><a href="/static/">服务</a></li>
+                    <li><a href="/static/">企业团购</a></li>-->
+                </ul>
+            </div>
+            <div class="h-sear" id="cz-search">
+
+                <input type="text" id="h-inp" >
+                <i class="iconfont icon-xiazai17" onclick="javascript:window.location.href='http://localhost:8082/search.html?q=' + encodeURIComponent(document.getElementById('h-inp').value);return false;"></i>
+                <p id="h-inp-txt">点击搜索</p>
+            </div>
+        </div>
+
+        <!--网页主体-->
+        <div class="cz_body">
+           <div class="w main">
+	<div class="crumb" style="font-size:18px"x  ><strong>全部结果</strong>&nbsp;&gt;&nbsp;<strong th:text="${query}"></strong></div>
+<div class="clr"></div>
+<div class="m clearfix" id="bottom_pager">
+<!--
+<div  id="pagin-btm" class="pagin fr" clstag="search|keycount|search|pre-page2">
+	<span class="prev-disabled">上一页<b></b></span>
+	<a href="javascript:void(0)" class="current" >1</a>
+	<a th:href="@{'search?q='+${query}+'&enc=utf-8&qr=&qrst=UNEXPAND&rt=1&page=2}'">2</a>
+	<a th:href="@{search?q=${query}&enc=utf-8&qr=&qrst=UNEXPAND&rt=1&page=3}">3</a>
+	<a th:href="@{search?q=${query}&enc=utf-8&qr=&qrst=UNEXPAND&rt=1&page=4}">4</a>
+	<a th:href="@{search?q=${query}&enc=utf-8&qr=&qrst=UNEXPAND&rt=1&page=5}">5</a>
+	<a th:href="@{search?q=${query}&enc=utf-8&qr=&qrst=UNEXPAND&rt=1&page=6}">6</a>
+	<span class="text">…</span>
+	<a th:href="@{'search.html?q='+${query}+'&enc=utf-8&qr=&qrst=UNEXPAND&rt=1&page=2'}" class="next">下一页<b></b></a>
+    <span class="page-skip"><em>&nbsp;&nbsp;共<span th:text="${totalPages}">${totalPages}</span>页&nbsp;&nbsp;&nbsp;&nbsp;到第</em></span>
+</div>
+-->
+    <!--<table>
+        <tr>
+            <td><a th:href="@{/goods/page?pageNum=0}">首页</a></td>
+            <td th:switch="${pageNum}">
+                <p th:case="1"> <a th:href="@{/goods/page?pageNum=1}">上一页</a></p>
+                <p th:case="*"><a th:href="@{/goods/page(pageNum=${pageNum-1})}">上一页</a></p>
+            </td>
+            <td th:switch="${pageNum}">
+                <p th:case="${totalPages}"><a th:href="@{/goods/page(pageNum=${totalPages})}">下一页</a></p>
+                <p th:case="*"><a th:href="@{/goods/page(pageNum=${pageNum+1})}">下一页</a></p>
+            </td>
+            <td><a th:href="@{/goods/page(pageNum=${totalPages})}">尾页</a></td>
+        </tr>
+    </table>-->
+    <nav aria-label="...">
+        <ul class="pager">
+            <li th:if=="${page}==1"> <a th:href="@{'search.html?q='+${query}+'&page=1'}">上一页</a></li>
+            <li th:if="${page}!=1"><a th:href="@{'search.html?q='+${query}+'&page='+${page-1}}">上一页</a></li>
+            <li th:if=="${page}==${totalPages}"><a th:href="@{'search.html?q='+${query}+'&page='+${totalPages}}">下一页</a></li>
+            <li th:if="${page}!=${totalPages}"><a th:href="@{'search.html?q='+${query}+'&page='+${page+1}}">下一页</a></li>
+        </ul>
+    </nav>
+
+
+</div>
+<div class="m psearch " id="plist">
+<ul class="list-h clearfix" tpl="2">
+<!--<c:forEach items="${itemList}" var="item">-->
+<li class="item-book" bookid="11078102" th:each="item:${itemList}">
+	<div class="p-img">
+		<a target="_blank" th:href="@{'http://localhost:8082/item/'+${item.id}+'.html'}">
+		<!--	<img width="160" height="160" data-img="1"  data-lazyload="${item.images[0]}" />-->
+            <img width="160" height="160" data-img="1"  th:src="${item.images[0]}" />
+		</a>
+	</div>
+	<div class="p-name">
+		<a target="_blank" th:href="@{'http://localhost:8082/item/'+${item.id}+'.html'}">
+            <span th:text="${item.title}">${item.title}</span><span style="font-size:9px;color:#FFAA71;" th:text="${item.sellPoint}">${item.sellPoint }</span>
+		</a>
+	</div>
+	<div class="p-price">
+		<i>Kamll价：</i>
+      <!--  <td th:text="${#numbers.formatDecimal(item.kaipiaozje/100.0,1,2)}"></td>
+        <td th:text="${#numbers.formatDecimal(item.kaipiaozje/100.0,1,2)}"></td>-->
+        <!--若想四舍五入保留小数后两位-->
+		<strong>￥<span th:text="${#numbers.formatDecimal(item.price/100.0,1,2)}" />0.00</span></strong>
+	</div>
+	<div class="service">由 Kamll 发货</div>
+	<div class="extra">
+		<span class="star"><span class="star-white"><span class="star-yellow h5">&nbsp;</span></span></span>
+	</div>
+</li>
+<!--</c:forEach>-->
+</ul></div>
+</div>
+        
+        </div>
+
+<!--网页结束-->
+    </div>
+<script>
+    //banner----swiper初始化
+    var mySwiper = new Swiper ('.main-swiper-container', {
+        autoplay:true,
+        speed:3000,
+        loop: true,
+        effect : 'fade',
+        fadeEffect: {
+            crossFade: true,
+        },
+        //分页器
+        pagination: {
+            el: '.main-swiper-pagination',
+            clickable:true,
+        },
+    });
+    //热门商品部分
+    var hotGoodsSwiper=new Swiper ('.hotGoods-swiper-container', {
+        autoplay:false,
+        effect : 'fade',
+        fadeEffect: {
+            crossFade: true,
+        },
+        //分页器
+        pagination: {
+            el: '.hotGoods-swiper-pagination',
+            clickable:true,
+        },
+    });
+
+
+
+
+
+    //搜索框效果
+    var oInp=document.getElementById("h-inp"),
+        oPTxt=document.getElementById("h-inp-txt"),
+        oSearCont=document.getElementById("cz-search");//搜索框部分
+    oInp.onfocus=function(){    //获得焦点
+        oPTxt.style.display="none";
+    }
+    oInp.onblur=function(){ //失去焦点
+        oPTxt.style.display="block";
+    }
+</script>
+</body>
+</html>
