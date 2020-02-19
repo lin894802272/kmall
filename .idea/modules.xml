@@ -12,7 +12,6 @@
       <module fileurl="file://$PROJECT_DIR$/interface/interface.iml" filepath="$PROJECT_DIR$/interface/interface.iml" />
       <module fileurl="file://$PROJECT_DIR$/item/item.iml" filepath="$PROJECT_DIR$/item/item.iml" />
       <module fileurl="file://$PROJECT_DIR$/item-detail/item-detail.iml" filepath="$PROJECT_DIR$/item-detail/item-detail.iml" />
-      <module fileurl="file://$PROJECT_DIR$/login/login.iml" filepath="$PROJECT_DIR$/login/login.iml" />
       <module fileurl="file://$PROJECT_DIR$/order/order.iml" filepath="$PROJECT_DIR$/order/order.iml" />
       <module fileurl="file://$PROJECT_DIR$/passport/passport.iml" filepath="$PROJECT_DIR$/passport/passport.iml" />
       <module fileurl="file://$PROJECT_DIR$/portal/portal.iml" filepath="$PROJECT_DIR$/portal/portal.iml" />

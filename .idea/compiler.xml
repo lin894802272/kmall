@@ -15,7 +15,6 @@
         <module name="interface" />
         <module name="item" />
         <module name="item-detail" />
-        <module name="login" />
         <module name="order" />
         <module name="passport" />
         <module name="portal" />

@@ -10,4 +10,11 @@ public interface TbUserDubboService {
 	 * @return
 	 */
 	TbUser selByUser(TbUser user);
+
+	/**
+	 * 注册一个用户
+	 * @param user
+	 * @return
+	 */
+	 int registry(TbUser user);
 }

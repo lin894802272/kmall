@@ -26,4 +26,12 @@ public class TbUserDubboServiceImpl implements TbUserDubboService {
 		}
 		return null;
 	}
+
+	@Override
+	public int registry(TbUser user) {
+		int count = tbUserMapper.insertSelective(user);
+		return count;
+	}
+
+
 }

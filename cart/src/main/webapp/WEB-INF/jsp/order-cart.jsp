@@ -122,8 +122,8 @@
 	</div>
 <!--shortcut end-->
 
-<div class="w w1 header clearfix">
-    <div id="logo"><a href="/"><img src="http://pz34oktwy.bkt.clouddn.com/Kmalllogo128px.png" alt="Kamll商城"></a></div>
+<div class="w w1 header clearfix">http://122.112.175.38/1581763628901611.png http://122.112.175.38/1581763628901611.png
+    <div id="logo"><a href="/"><img src="http://122.112.175.38/1581763628901611.png" alt="Kamll商城"></a></div>
 </div>
 
 <form id="orderForm" class="hide" action="http://localhost:8086/order/create.html" method="post">

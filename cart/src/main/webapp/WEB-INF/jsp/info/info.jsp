@@ -27,7 +27,7 @@
 <body id="mainframe">
 	<div class="w w1 header clearfix">
 		<div id="logo">
-			<a href="/"><img src="http://pz34oktwy.bkt.clouddn.com/Kmalllogo128px.png" alt="Kamll商城"></a>
+			<a href="/"><img src="http://122.112.175.38/1581763628901611.png" alt="Kamll商城"></a>
 		</div>
 	</div>
 

@@ -148,7 +148,7 @@
 
 <!--shortcut end-->
 <div class="w w1 header clearfix">
-	<div id="logo"><a href="/"><img clstag="clickcart|keycount|xincart|logo" src="http://pz34oktwy.bkt.clouddn.com/Kmalllogo128px.png" title="返回Kamll商城首页" alt="返回Kamll商城首页"></a></div>
+	<div id="logo"><a href="/"><img clstag="clickcart|keycount|xincart|logo" src="http://122.112.175.38/1581763628901611.png" title="返回Kamll商城首页" alt="返回Kamll商城首页"></a></div>
     <div class="language"><a href="javascript:void(0);" onclick="toEnCart()"></a></div>
 	<div class="progress clearfix">
 		<ul class="progress-1">
@@ -160,7 +160,7 @@
 </div>
 <div class="w cart">
 	<div class="cart-hd group">
-		<h2>我的购物车</h2>
+		<a href="http://localhost:8086/order/my-orders"><h2>前往我的订单中心</h2></a>
 	</div>
 	<div id="show">
 	

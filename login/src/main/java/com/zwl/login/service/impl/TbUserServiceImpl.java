@@ -19,6 +19,7 @@ import java.util.UUID;
 
 @Service
 public class TbUserServiceImpl implements TbUserService {
+
 	@Reference(version = "1.0.0")
 	private TbUserDubboService tbUserDubboServiceImpl;
 	@Resource

@@ -15,7 +15,7 @@
 <div class="w" id="logo">
     <div>
     	<a href="http://localhost:8082">
-    		<img src="http://pz34oktwy.bkt.clouddn.com/Kmalllogo128px.png" alt="Kamll商城" width="170" height="60"/>
+    		<img src="http://122.112.175.38/1581763628901611.png" alt="Kamll商城" width="170" height="60"/>
     	</a> <b></b>
     </div>
 </div>

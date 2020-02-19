@@ -29,4 +29,11 @@ public interface TbUserService {
 	 * @return
 	 */
 	EgoResult logout(String token, HttpServletRequest request, HttpServletResponse response);
+
+	/**
+	 * 注册一个用户
+	 * @param tbUser
+	 * @return
+	 */
+	EgoResult registry(TbUser tbUser);
 }

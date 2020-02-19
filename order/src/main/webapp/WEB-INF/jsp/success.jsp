@@ -26,7 +26,7 @@
 <jsp:include page="commons/shortcut.jsp" />
 <!--shortcut end-->
 <div class="w" id="headers">
-		<div id="logo"><a href="/"><img alt="Kamll商城" src="http://pz34oktwy.bkt.clouddn.com/Kmalllogo128px.png"></a></div>
+		<div id="logo"><a href="/"><img alt="Kamll商城" src="http://122.112.175.38/1581763628901611.png"></a></div>
 		<ul class="step" id="step3">
 			<li class="fore1">1.我的购物车<b></b></li>
 			<li class="fore2">2.填写核对订单信息<b></b></li>

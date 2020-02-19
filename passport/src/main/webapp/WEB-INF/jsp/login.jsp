@@ -12,7 +12,7 @@
 <div class="w">
     <div id="logo">
     	<a href="http://localhost:8082" clstag="passport|keycount|login|01">
-    		<img src="http://pz34oktwy.bkt.clouddn.com/Kmalllogo128px.png" alt="Kamll" width="170" height="60"/>
+    		<img src="http://122.112.175.38/1581763628901611.png" alt="Kamll" width="170" height="60"/>
     	</a><b></b>
    	</div>
 </div>

@@ -35,6 +35,23 @@ public class TbUserController {
 
 		return "login";
 	}
+
+	@RequestMapping("user/registry")
+	public String registry(){
+
+		return "registry";
+	}
+
+
+	@RequestMapping("user/doRegistry")
+	@ResponseBody
+	public EgoResult doregistry(TbUser tbUser) {
+
+		return tbUserServiceImpl.registry(tbUser);
+	}
+
+
+
 	/**
 	 * 登录
 	 * @param user
