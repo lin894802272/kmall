@@ -1,5 +1,6 @@
 package com.zwl.order.service;
 
+import com.github.pagehelper.PageInfo;
 import com.kmall.pojo.TbOrder;
 import com.kmall.pojo.TbOrderExample;
 import com.kmall.pojo.TbOrderItem;
@@ -37,6 +38,12 @@ public interface TbOrderService {
 	 * 根据用户ID查询所有的订单
 	 */
 	public List<TbOrder> selAllOrderByUseID(long user_id);
+
+	/**
+	 * 根据用户ID查询所有的订单--分页
+	 */
+	public PageInfo<TbOrder> selAllOrderByUseID(long user_id, int pageNum, int pageSize);
+
 
 
 	/**

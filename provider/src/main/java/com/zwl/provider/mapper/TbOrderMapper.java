@@ -20,6 +20,8 @@ public interface TbOrderMapper {
 
     List<TbOrder> selectByExample(TbOrderExample example);
 
+    List<TbOrder> selectByExampleByPage(@Param("id") long id);
+
     TbOrder selectByPrimaryKey(String orderId);
 
     int updateByExampleSelective(@Param("record") TbOrder record, @Param("zwl") TbOrderExample example);
@@ -29,4 +31,6 @@ public interface TbOrderMapper {
     int updateByPrimaryKeySelective(TbOrder record);
 
     int updateByPrimaryKey(TbOrder record);
+
+
 }

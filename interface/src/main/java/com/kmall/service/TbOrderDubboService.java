@@ -1,5 +1,6 @@
 package com.kmall.service;
 
+import com.github.pagehelper.PageInfo;
 import com.kmall.pojo.TbOrder;
 import com.kmall.pojo.TbOrderItem;
 import com.kmall.pojo.TbOrderShipping;
@@ -33,6 +34,10 @@ public interface TbOrderDubboService {
 	 */
 	List<TbOrderItem> selAllOrderItemByOrderId(String order_id);
 
-
-
+	/**
+	 * 根据用户ID查询他所有的订单 分页
+	 * @param user_id
+	 * @return
+	 */
+	PageInfo<TbOrder> selAllOrderByUseID(long user_id, int pageNum, int pageSize);
 }

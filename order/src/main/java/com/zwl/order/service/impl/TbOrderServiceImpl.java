@@ -9,6 +9,7 @@ import java.util.Map;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import com.github.pagehelper.PageInfo;
 import com.kmall.pojo.TbItem;
 import com.kmall.pojo.TbOrder;
 import com.kmall.pojo.TbOrderItem;
@@ -155,6 +156,11 @@ public class TbOrderServiceImpl implements TbOrderService {
 	@Override
 	public List<TbOrder> selAllOrderByUseID(long user_id) {
 		return tbOrderDubboService.selAllOrderByUseID(user_id);
+	}
+
+	@Override
+	public PageInfo<TbOrder> selAllOrderByUseID(long user_id, int pageNum, int pageSize) {
+		return tbOrderDubboService.selAllOrderByUseID(user_id,pageNum, pageSize);
 	}
 
 	@Override

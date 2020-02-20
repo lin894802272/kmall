@@ -160,7 +160,7 @@
 </div>
 <div class="w cart">
 	<div class="cart-hd group">
-		<a href="http://localhost:8086/order/my-orders"><h2>前往我的订单中心</h2></a>
+		<a href="http://localhost:8086/order/my-orders-page"><h2>前往我的订单中心</h2></a>
 	</div>
 	<div id="show">
 	

@@ -214,7 +214,7 @@
                                     $("#submitDate").val(1);
                                     $("#orderState").val(4096);
                                 </script>
-                                <c:forEach items="${er.data}" var="order">
+                                <c:forEach items="${er.data.list}" var="order">
                                 <tbody id="tb-3965995220">
 
 
@@ -273,18 +273,21 @@
                             </table>
                         </div>
                         <div class="mt10">
-                           <%-- <div class="pagin fr">
-                                <!--  <span class="text">共20条记、
+                           <div class="pagin fr">
+                               <c:if test="${er.data.pageNum==1}">
+                                <a href="http://localhost:8086/order/my-orders-page?pageNum=1&pageSize=5"><span class="prev-disabled">上一页<b></b></span></a>
+                               </c:if>
+                               <c:if test="${er.data.pageNum!=1}">
+                                   <a href="http://localhost:8086/order/my-orders-page?pageNum=${er.data.pageNum-1}&pageSize=5"><span class="prev-disabled">上一页<b></b></span></a>
+                               </c:if>
 
-                                录</span>    <span class="text">共1页</span> -->
-                                <span class="prev-disabled">上一页<b></b></span>
-
-                                <!-- <span class="prev-disabled">首页</span> -->
-                                <a class="current">1</a>
-                                <!-- <span class="next-disabled">末页</span>  -->
-                                <span class="next-disabled">下一页<b></b></span>
-
-                            </div>--%>
+                               <c:if test="${er.data.pageNum==er.data.pages}">
+                                   <a href="http://localhost:8086/order/my-orders-page?pageNum=${er.data.pageNum}&pageSize=5"><span class="prev-disabled">下一页<b></b></span></a>
+                               </c:if>
+                               <c:if test="${er.data.pageNum!=er.data.pages}">
+                                   <a href="http://localhost:8086/order/my-orders-page?pageNum=${er.data.pageNum+1}&pageSize=5"><span class="prev-disabled">下一页<b></b></span></a>
+                               </c:if>
+                            </div>
                             <div class="clr"></div>
                         </div>
                     </div>

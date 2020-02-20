@@ -1,6 +1,8 @@
 package com.zwl.provider.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.kmall.pojo.*;
 import com.kmall.service.StudentService;
 import com.kmall.service.TbOrderDubboService;
@@ -54,6 +56,14 @@ public class TbOrderDubboServiceImpl implements TbOrderDubboService {
 		TbOrderItemExample tbOrderItemExample=new TbOrderItemExample();
 		tbOrderItemExample.createCriteria().andOrderIdEqualTo(order_id);
 		return tbOrderItemMapper.selectByExample(tbOrderItemExample);
+	}
+
+	@Override
+	public PageInfo<TbOrder> selAllOrderByUseID(long user_id, int pageNum, int pageSize) {
+		PageHelper.startPage(pageNum,pageSize);
+		List<TbOrder> tbOrders = tbOrderMapper.selectByExampleByPage(user_id);
+		PageInfo pageInfo =new PageInfo(tbOrders);
+		return pageInfo;
 	}
 
 }

@@ -15,6 +15,7 @@ import com.alipay.api.AlipayApiException;
 import com.alipay.api.AlipayClient;
 import com.alipay.api.DefaultAlipayClient;
 import com.alipay.api.request.AlipayTradePagePayRequest;
+import com.github.pagehelper.PageInfo;
 import com.kmall.pojo.TbOrder;
 import com.kmall.service.TbOrderDubboService;
 import com.zwl.commons.pojo.EgoResult;
@@ -62,12 +63,32 @@ public class OrderController {
 		String result = HttpClientUtil.doPost(passprtUrl+token);
 		EgoResult er = JsonUtils.jsonToPojo(result, EgoResult.class);
 		Map user= (LinkedHashMap)er.getData();
-		List<TbOrder> tbOrders= tbOrderDubboService.selAllOrderByUseID(Long.parseLong(user.get("id").toString()));
+		List<TbOrder> tbOrders= tbOrderServiceImpl.selAllOrderByUseID(Long.parseLong(user.get("id").toString()));
 		er.setData(tbOrders);
 		er.setStatus(200);
 		model.addAttribute("er",er);
 		return "my-orders";
 	}
+
+
+	@RequestMapping("order/my-orders-page")
+	public String showOrderByPage(HttpServletRequest request,Model model,@RequestParam(name = "pageNum", defaultValue = "1") int pageNum, @RequestParam(name = "pageSize", defaultValue = "5") int pageSize){
+		EgoResult erResult = new EgoResult();
+		String token = CookieUtils.getCookieValue(request, "TT_TOKEN");
+		String result = HttpClientUtil.doPost(passprtUrl+token);
+		EgoResult er = JsonUtils.jsonToPojo(result, EgoResult.class);
+		Map user= (LinkedHashMap)er.getData();
+		PageInfo<TbOrder> pageInfo = tbOrderServiceImpl.selAllOrderByUseID(Long.parseLong(user.get("id").toString()), pageNum, pageSize);
+		System.out.println("pageInfo-----:" + pageInfo);
+		er.setData(pageInfo);
+		er.setStatus(200);
+		model.addAttribute("er",er);
+		return "my-orders";
+	}
+
+
+
+
 
 
 	/**
